@@ -1,0 +1,8 @@
+val one_hop = sc.textFile("data_input").groupBy(x => x.split("\t")(0));
+
+val temp = one_hop.values.cartesian(one_hop.values);
+
+val result = temp.filter(x => x._1.head.split("\t")(1) == x._1.last.split("\t")(0));
+
+temp.foreach(x => println(x._1.last.split("\t")(0)))
+temp.foreach(x => println(x._2.head.split("\t")(1)))
