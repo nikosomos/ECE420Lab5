@@ -1,0 +1,8 @@
+sc.textFile("data_input")
+    .toArray
+    .groupBy((x) => {
+        x.split("\t")(0);
+    })
+    .foreach((x) => {
+        println(x(1).count())
+    })
