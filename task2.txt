@@ -1,4 +1,4 @@
 val out = sc.textFile("data_input").groupBy(x => x.split("\t")(0)).map(x => (x._1, (x._2.head.split("\t"))));
 val in = sc.textFile("data_input").groupBy(x => x.split("\t")(1)).map(x => (x._1, (x._2.head.split("\t"))));
 val result = (in union out).reduceByKey(_ ++ _).map(x => (x._1, x._2));
-result.foreach(println);
+result.collect();

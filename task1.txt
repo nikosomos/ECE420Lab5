@@ -1,1 +1,2 @@
-val result = sc.textFile("data_input").groupBy(x => x.split("\t")(1)).map(x => x._2.size).max()
+val result = sc.textFile("data_input").groupBy(x => x.split("\t")(1)).map(x => x._2.size).max();
+println(result);
